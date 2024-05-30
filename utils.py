@@ -92,10 +92,10 @@ def rnn_cell(module_name, hidden_dim):
   
   # GRU
   if (module_name == 'gru'):
-    rnn_cell = tf.keras.layers.GRUCell(num_units=hidden_dim, activation=tf.compat.v1.nn.tanh)
+    rnn_cell = tf.keras.layers.GRUCell(units=hidden_dim, activation='tanh')
   # LSTM
   elif (module_name == 'lstm'):
-    rnn_cell = tf.keras.layers.LSTMCell(num_units=hidden_dim, activation=tf.compat.v1.nn.tanh)
+    rnn_cell = tf.keras.layers.LSTMCell(units=hidden_dim, activation='tanh')
   # LSTM Layer Normalization
   return rnn_cell
 
